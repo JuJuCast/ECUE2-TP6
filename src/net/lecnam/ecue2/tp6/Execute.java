@@ -14,7 +14,7 @@ public class Execute {
 
         exercice4();
 
-        //exercice5();
+        exercice5();
 
         //exercice6();
 
@@ -62,8 +62,16 @@ public class Execute {
     }
 
     private static void exercice5(){
-
-
+        EtudiantService service = new EtudiantService();
+        try {
+            Etudiant[] etudiantsImportes = service.charge("etudiants.csv");
+            System.out.println("--- Étudiants importés du fichier CSV ---");
+            for (Etudiant e : etudiantsImportes) {
+                System.out.println("Nom : " + e.getNom() + " | Prénom : " + e.getPrenom() + " | INE : " + e.getIne());
+            }
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
     }
 
     private static void exercice6(){
