@@ -19,9 +19,12 @@ public class Execute {
     }
 
     private static void exercice1(){
-
-
+        Division d = new Division();
+        double resultat = d.division1(10, 0);
+        System.out.println("Résultat : " + resultat);
     }
+
+
 
     private static void exercice2(){
 
